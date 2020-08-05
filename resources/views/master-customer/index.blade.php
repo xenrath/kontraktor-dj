@@ -1,45 +1,66 @@
 @extends('layouts.main')
 @section('title', 'Master Customer')
 @section('content')
-<!-- #END# Basic Examples -->
-<!-- Exportable Table -->
-<div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="card">
-            <div class="header">
-                <h2>
-                    EXPORTABLE TABLE
-                </h2>
-                <ul class="header-dropdown m-r--5">
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="material-icons">more_vert</i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);">Action</a></li>
-                            <li><a href="javascript:void(0);">Another action</a></li>
-                            <li><a href="javascript:void(0);">Something else here</a></li>
-                        </ul>
-                    </li>
-                </ul>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Data Customer</h1>
             </div>
-            <div class="body">
-                <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
-                        <thead>
-                        	<tr>
-                        		<th></th>
-                        	</tr>
-                        </thead>
-                    	<tbody>
-                    		<tr>
-                    			<td></td>
-                    		</tr>
-                    	</tbody>
-                    </table>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item active">Customer</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Tabel Data Customer</h3>
+                        <a href="{{ route('master-customer.create') }}" class="btn btn-sm btn-primary float-sm-right"><i class="nav-icon fas fa-plus-square pull-right"></i></a>
+                        
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Nama Customer</th>
+                                    <th>No. Telepon</th>
+                                    <th>Alamat</th>
+                                    <th>Kategori</th>
+                                    <th>Opsi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($mastercustomer as $mc)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $mc->nama }}</td>
+                                    <td>{{ $mc->telepon }}</td>
+                                    <td>{{ $mc->alamat }}</td>
+                                    <td>{{ $mc->kategori }}</td>
+                                    <td>
+                                        <a href="{{ route('master-customer.show', $mc->id) }}" class="btn btn-sm btn-info"><i class="nav-icon fas fa-eye"></i></a>
+                                        <a href="{{ route('master-customer.edit', $mc->id) }}" class="btn btn-sm btn-success"><i class="nav-icon fas fa-edit"></i></a>
+                                        <a href="{{ route('master-customer.destroy', $mc->id) }}" class="btn btn-sm btn-danger"onClick="return confirm('Yakin Mau Di Hapus ?')"><i class="nav-icon fas fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection

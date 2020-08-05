@@ -17,7 +17,7 @@ class CreateMasterSupplierTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('alamat');
-            $table->string('telpon');
+            $table->string('telepon');
             $table->string('bank');
             $table->string('rekening');
             $table->timestamps();

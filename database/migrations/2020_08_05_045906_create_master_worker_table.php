@@ -17,7 +17,7 @@ class CreateMasterWorkerTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('alamat');
-            $table->string('telpon');
+            $table->string('telepon');
             $table->string('kategori');
             $table->string('gaji');
             $table->timestamps();

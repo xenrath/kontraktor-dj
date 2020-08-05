@@ -14,7 +14,7 @@ class MasterCustomerController extends Controller
      */
     public function index(MasterCustomer $mastercustomer)
     {
-        // $mastercustomer = MasterCustomer::all();
+        $mastercustomer = MasterCustomer::all();
         return view('master-customer.index', compact('mastercustomer'));
     }
 
@@ -36,7 +36,8 @@ class MasterCustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        MasterCustomer::create($request->all());
+        return redirect('/master-customer');
     }
 
     /**
