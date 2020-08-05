@@ -1,7 +1,7 @@
 @extends('layouts.main')
-@section('title', 'Home')
+@section('title', 'Master Customer')
 @section('content')
 <div class="block-header">
-    <h2>Home</h2>
+    <h2>Master Customer</h2>
 </div>
 @endsection
