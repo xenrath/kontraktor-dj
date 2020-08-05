@@ -15,6 +15,11 @@ class CreateMasterSupplierTable extends Migration
     {
         Schema::create('master_supplier', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('alamat');
+            $table->string('telpon');
+            $table->string('bank');
+            $table->string('rekening');
             $table->timestamps();
         });
     }

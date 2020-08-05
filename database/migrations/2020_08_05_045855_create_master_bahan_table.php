@@ -15,6 +15,11 @@ class CreateMasterBahanTable extends Migration
     {
         Schema::create('master_bahan', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('kategori');
+            $table->string('satuan');
+            $table->string('harga');
+            $table->string('stok');
             $table->timestamps();
         });
     }

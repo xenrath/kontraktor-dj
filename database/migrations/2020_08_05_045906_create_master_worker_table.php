@@ -15,6 +15,11 @@ class CreateMasterWorkerTable extends Migration
     {
         Schema::create('master_worker', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('alamat');
+            $table->string('telpon');
+            $table->string('kategori');
+            $table->string('gaji');
             $table->timestamps();
         });
     }

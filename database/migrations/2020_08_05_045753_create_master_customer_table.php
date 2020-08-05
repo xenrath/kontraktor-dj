@@ -15,6 +15,10 @@ class CreateMasterCustomerTable extends Migration
     {
         Schema::create('master_customer', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('telpon');
+            $table->string('alamat');
+            $table->string('kategori');
             $table->timestamps();
         });
     }
